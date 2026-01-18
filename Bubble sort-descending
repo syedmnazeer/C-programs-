@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j, temp;
+
+    // Step 1: Number of students
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    // Step 2: Array declaration
+    int scores[n];
+
+    // Step 3: Input scores
+    printf("Enter the scores:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &scores[i]);
+    }
+
+    // Step 4: Bubble Sort (Descending Order)
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (scores[j] < scores[j + 1]) {
+                temp = scores[j];
+                scores[j] = scores[j + 1];
+                scores[j + 1] = temp;
+            }
+        }
+    }
+
+    // Step 5: Print sorted scores
+    printf("Scores in descending order:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", scores[i]);
+    }
+
+    return 0;
+}
