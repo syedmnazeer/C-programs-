@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main() {
+    int choice, userID;
+
+    // Stored KYC records
+    int PAN = 12345, AADHAR = 67890, APAAR = 11111, DL = 22222, Passport = 33333;
+
+    // Display menu
+    printf("Choose the ID type to verify:\n");
+    printf("1. PAN Number\n");
+    printf("2. AADHAR Number\n");
+    printf("3. APAAR ID\n");
+    printf("4. Driving License\n");
+    printf("5. Passport\n");
+
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    printf("Enter the ID Number: ");
+    scanf("%d", &userID);
+
+    // Verification
+    switch (choice) {
+        case 1:
+            if (userID == PAN)
+                printf("Verified: PAN Number\n");
+            else
+                printf("Not Verified: PAN Number\n");
+            break;
+
+        case 2:
+            if (userID == AADHAR)
+                printf("Verified: AADHAR Number\n");
+            else
+                printf("Not Verified: AADHAR Number\n");
+            break;
+
+        case 3:
+            if (userID == APAAR)
+                printf("Verified: APAAR ID\n");
+            else
+                printf("Not Verified: APAAR ID\n");
+            break;
+
+        case 4:
+            if (userID == DL)
+                printf("Verified: Driving License\n");
+            else
+                printf("Not Verified: Driving License\n");
+            break;
+
+        case 5:
+            if (userID == Passport)
+                printf("Verified: Passport\n");
+            else
+                printf("Not Verified: Passport\n");
+            break;
+
+        default:
+            printf("Invalid Choice!\n");
+    }
+
+    return 0;
+}
