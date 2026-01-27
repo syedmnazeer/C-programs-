@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 100
+
+int main()
+{
+    char description[MAX];
+    char keyword[50];
+
+    printf("Enter the course description:\n");
+    fgets(description, MAX, stdin);
+
+    // Remove newline added by fgets
+    description[strcspn(description, "\n")] = '\0';
+
+    printf("Enter the keyword to search: ");
+    scanf("%s", keyword);
+
+    if (strstr(description, keyword) != NULL)
+        printf("Keyword '%s' found in the course description.\n", keyword);
+    else
+        printf("Keyword '%s' not found in the course description.\n", keyword);
+
+    return 0;
+}
